@@ -16,7 +16,7 @@ A Symfony project created on July 11, 2017, 1:06 am.
 	the equivalent of a MySQL git. Open a terminal in the home directory.</p>
 
 <b>Prerequisites:</b><br><br>
-	<p>1. Php version >= 5.5.9 <br>
+	<p>1. Php version >= 7.0.0 <br>
 	2. Composer <br>
 	3. MySQL server or MariaDB <br>
 	4. Attention <br></p>
