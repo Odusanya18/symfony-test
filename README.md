@@ -40,6 +40,8 @@ A Symfony project created on July 11, 2017, 1:06 am.
 
 	5.Run commands
 
+		 composer install
+		 	AND
 		./bin/console doctrine:migrations:generate
 			AND
 		./bin/console doctrine:migrations:migrate
