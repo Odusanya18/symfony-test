@@ -6,7 +6,7 @@
 	The project is a simple film inventory system.</i></p>
 
 <b>Getting Started:</b><br><br>
-	</p>Extract the files and delete the files under @app/DoctrineMigrations, it is absolutely not needed but only provides
+	</p>Clone the repository and delete the files under @app/DoctrineMigrations, it is absolutely not needed but only provides
 	the equivalent of a MySQL git. Open a terminal in the home directory.</p>
 
 <b>Prerequisites:</b><br><br>
