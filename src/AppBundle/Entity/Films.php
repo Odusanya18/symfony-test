@@ -86,6 +86,13 @@ class Films
     /**
      * @var int
      *
+     * @Assert\Range(
+     *      min = 0,
+     *      max = 5,
+     *      minMessage = "You must enter at least {{ limit }}",
+     *      maxMessage = "You cannot enter more than {{ limit }}"
+     * )
+     *
      * @ORM\Column(name="rating", type="integer")
      */
     private $rating;
