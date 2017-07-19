@@ -57,29 +57,30 @@
 	7.Browse the project @localhost:8000
 
 
-<b>Notes:</b><br><br>
-	<p>1.Symfony 3.3.5 is not yet stable, even though it's marked stable, I personally encountered issues when integrating
-	bundles not yet adapted for version 3.3.5<br>
+<b>Notes:</b>
+	
+	1.Symfony 3.3.5 is not yet stable, even though it's marked stable, I personally encountered issues when integrating
+	bundles not yet adapted for version 3.3.5.
+	
+	2.Console command
 
-	2.Console command<br>
+		./bin/console server:start
 
-		<p>./bin/console server:start</p>
+	is non-blocking and doesn't work on Mac systems where such isn't supported, so use:
 
-	is non-blocking and doesn't work on Mac systems where such isn't supported, so use<br>
+		php bin/console server:run
 
-		<p>php bin/console server:run</p>
+	3.Console commands as described above prefixed with:
 
-	3.Console commands as described above prefixed with<br>
+		./ as in ./bin/console ....
 
-		<p>./</p> as in <p>./bin/console ....</p>
+	  only works on linux, prefix with
 
-	  only works on linux, prefix with<br>
+	  	php  instead, as in php bin/console ....
 
-	  	<p>php </p> instead, as in <p> php bin/console ....</p>
+	  on Mac and Windows Systems.
 
-	  on Mac and Windows Systems.<br>
-
-	4.For more administrational activities, the admin panel is located @localhost:8000/admin<br></p>
+	4.For more administrational activities, the admin panel is located @localhost:8000/admin.
 
 <b>Coding standard:</b><br><br>
 	<p>The project adheres to the following coding standards:<br>
