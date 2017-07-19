@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block breadcrumb %}
+    <li><a href="{{path('films_new')}}" class="active">New Film</a></li>
+{% endblock %}
+{% block title %}
+    New Film
+{% endblock %}
+{% block body %}
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">Add New Film</h3>
+	</div>
+	<div class="panel-body">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button type="submit" class="btn btn-primary">Add product</button>
+		{{ form_end(form) }}
+	</div>
+</div>
+{% endblock %}

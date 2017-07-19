@@ -1,0 +1,175 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+    app.path.films_images: /uploads
+
+stof_doctrine_extensions:
+    uploadable:
+        default_file_path: "%kernel.root_dir%/../web%app.path.films_images%"
+        mime_type_guesser_class: Stof\DoctrineExtensionsBundle\Uploadable\MimeTypeGuesserAdapter
+        default_file_info_class: Stof\DoctrineExtensionsBundle\Uploadable\UploadedFileInfo
+    orm:
+        default:
+            timestampable: true
+            sluggable: true
+            uploadable: true
+            softdeleteable: true
+            loggable: true
+            translatable: true
+
+framework:
+    #esi: ~
+    #translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+          - bootstrap_3_layout.html.twig
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: "%kernel.project_dir%/var/data/data.sqlite"
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        #filters:
+        #    softdeleteable:
+        #        class: Gedmo\SoftDeleteable\Filter\SoftDeletableFilter
+        #        enabled: true
+        mappings:
+            gedmo_translatable:
+                type: annotation
+                prefix: Gedmo\Translatable\entity_managers
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
+                alias: GedmoTranslatable
+                is_bundle: false
+            gedmo_translator:
+                type: annotation
+                prefix: Gedmo\Translator\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
+                alias: GedmoTranslator
+                is_bundle: false
+            gedmo_loggable:
+                type: annotation
+                prefix: Gedmo\Loggble\Entity
+                dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                alias: GedmoLoggable
+                is_bundle: false
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_images:
+            uri_prefix: '%app.path.films_images%'
+            upload_destination: '%kernel.root_dir%/../web%app.path.films_images%'
+
+easy_admin:
+    site_name: 'Codeline <em style="font-size: 80%;">Admin</em>'
+    formats:
+        datetime: F j, Y H:i
+    entities:
+        Films:
+                    class: AppBundle\Entity\Films
+                    icon: 'glyphicon glyphicon-film'
+                    #form:
+                    #                fields:
+                    #                    - { type: 'name' }
+                    #                    - { property: 'description', type: 'ckeditor' }
+                    #                    - { property: 'imageFile', type: 'vich_image' }
+                    #                    - { type: 'releaseDate' }
+                    #                    - { property: 'rating' }
+                    #                    - { property: 'ticketPrice', type: 'money', type_options: { currency: 'USD'} }
+                    #                    - { property: 'country' }
+                    #                    - { property: 'genre' }
+                    list:
+                        label: 'Films'
+                        max_results: 30
+                        fields:
+                            - id
+                            - { property: 'name' }
+                            - { property: 'image', type: 'image', base_path: '%app.path.films_images%' }
+                            - { property: 'description', type: 'raw', label: 'Description' }
+                            - { property: 'releaseDate', type: 'datetime', label: 'Released At'}
+                            - { property: 'ticketPrice', type: 'decimal', label: 'Price ($)'}
+
+        Countries:
+                            class: AppBundle\Entity\Country
+        Genre:
+                            class: AppBundle\Entity\Genre
+        Accounts:
+                            class: AppBundle\Entity\Accounts
+        Comments:
+                            class: AppBundle\Entity\Comments
+
+    design:
+        color_scheme: 'light'
+        form_theme: 'horizontal'
+        brand_color: '#33BBFF'
+
+ivory_ck_editor:
+    input_sync: true
+    default_config: simple_config
+    configs:
+        simple_config:
+            toolbar:
+                # ...
+        advanced_config:
+            toolbar:
+                
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations

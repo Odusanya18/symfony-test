@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block breadcrumb %}
+    <li><a href="{{path('security_login')}}" class="active">Login</a></li>
+{% endblock %}
+{% block title %}
+    Login
+{% endblock %}
+{% block body %}
+	{{form_start(form)}}
+	{{form_widget(form)}}
+	<button action='submit' class='btn btn-primary'>Login</button>
+	{{form_end(form)}}
+{% endblock %}

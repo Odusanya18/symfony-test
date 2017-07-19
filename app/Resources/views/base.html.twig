@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="GiteSoft Movie Listings">
+	<title>GiteSoft | {% block title %}Welcome{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+    body { background: #F5F5F5; font: 14px/1.5 sans-serif; padding-top: 80px; }
+    </style>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="/"><img src="{{ asset('favicon.ico') }}" alt="Gitesoft logo" class="logo"></a>
+                <a href="/" class="navbar-brand">Gitesoft Films</a>
+            </div>
+             <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      {% if not app.user %}
+        <li><a href="{{path('security_register')}}">Sign  Up</a></li>
+        <li><a href="{{path('security_login')}}">Sign in</a></li>
+        {% else %}
+        <li><a href="{{path('security_logout')}}">Log out</a></li>
+        {% endif %}
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>        
+        </div>
+        </form>
+        </div>
+        </div>
+        </nav>
+<div class="content">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{{path('homepage')}}">Home</a></li>
+			<li><a href="{{path('film_listing')}}">Films</a></li>
+            {% block breadcrumb %}
+            {% endblock %}
+		
+		</ol>
+	<div class="container col-md-4 col-sm-4">
+    	<div class="row" role="group">
+        {% if countries %}
+    		<div>
+    			<h3>Countries</h3>
+                <ul class="nav nav-pills nav-stacked">
+                {% for country in countries %}
+    				<li role="presentation">
+    					<a href="{{path('film_listing')}}" >{{country.name}}</a>
+    				</li>
+    			{% endfor %}
+    			</ul>
+    			</div>
+                {% endif %}
+                {% if genres %}
+    			<div>
+    			<h3>Genres</h3>
+    			<ul class="nav nav-pills nav-stacked">
+                {% for genre in genres %}
+    				<li role="presentation">
+    					<a href="{{path('film_listing')}}">{{genre.name}}</a>
+    				</li>
+    			{% endfor %}
+    			</ul>
+    			</div>
+                {% endif %}
+
+    	</div>
+	</div>
+	<div class="col-md-8 col-sm-8">{% block body %}{% endblock %}</div>
+	</div>
+</div>
+        {% block javascripts %}
+        <script src="{{ asset('js/jquery.js') }}"></script>
+        {% endblock %}
+</body>
+</html>
