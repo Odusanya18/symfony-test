@@ -6,8 +6,19 @@
     <li><a href="{{path('security_register')}}" class="active">Register</a></li>
 {% endblock %}
 {% block body %}
-	{{form_start(form)}}
-	{{form_widget(form)}}
-	<button action='submit' class='btn btn-primary'>Register</button>
-	{{form_end(form)}}
+	<h1>Register</h1>
+		{{ form_start(form) }}
+			{{ form_row(form.firstname) }}
+			{{ form_row(form.lastname) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword.first, {
+                        'label': 'Password'
+                    }) }}
+            {{ form_row(form.plainPassword.second, {
+                        'label': 'Repeat Password'
+                    }) }}
+
+                <button type="submit" class="btn btn-primary" formnovalidate>Register</button>
+            {{ form_end(form) }}
+
 {% endblock %}
