@@ -111,7 +111,10 @@ class Genre
         return $this->films;
     }
 
-    public function __toString() : string
+    /**
+     * @return string | null
+     */
+    public function __toString()
     {
         return $this->getName();
     }

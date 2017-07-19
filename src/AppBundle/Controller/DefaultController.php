@@ -158,6 +158,7 @@ class DefaultController extends AbstractController
          */
     	$film = new Films();
     	$form = $this->createForm(FilmsType::Class, $film);
+        $form->handleRequest($request);
     	if ($form->isSubmitted() && $form->isValid()) {
     		$film = $form->getData();
     		$em->persist($film);

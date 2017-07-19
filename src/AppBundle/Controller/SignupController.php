@@ -2,7 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
 use AppBundle\Form\UserRegistrationForm;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -35,7 +34,7 @@ class SignupController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             /**
-             * @var User $user
+             * @var \AppBundle\Entity\Accounts $user
              */
             $user = $form->getData();
             $em = $this->getDoctrine()->getManager();

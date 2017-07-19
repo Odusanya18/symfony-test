@@ -129,6 +129,9 @@ class Comments
         return $this->filmId;
     }
 
+    /**
+     * @return string | null
+     */
     public function __toString()
     {
         return $this->getComment();
