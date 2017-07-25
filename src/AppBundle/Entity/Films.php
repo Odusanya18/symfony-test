@@ -138,7 +138,7 @@ class Films
      *
      * @return Films
      */
-    public function setName(string $name) : self
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -162,7 +162,7 @@ class Films
      *
      * @return Films
      */
-    public function setDescription(string $description) :self
+    public function setDescription(string $description)
     {
         $this->description = $description;
 
@@ -186,7 +186,7 @@ class Films
      *
      * @return Films
      */
-    public function setReleaseDate(\DateTime $releaseDate) : self
+    public function setReleaseDate(\DateTime $releaseDate)
     {
         $this->releaseDate = $releaseDate;
 
@@ -234,7 +234,7 @@ class Films
      *
      * @return Films
      */
-    public function setTicketPrice(float $ticketPrice) : self
+    public function setTicketPrice(float $ticketPrice)
     {
         $this->ticketPrice = $ticketPrice;
 
@@ -258,7 +258,7 @@ class Films
      *
      * @return Films
      */
-    public function setCountry(\AppBundle\Entity\Country $country) : self
+    public function setCountry(\AppBundle\Entity\Country $country)
     {
         $this->country = $country;
 
@@ -282,7 +282,7 @@ class Films
      *
      * @return Films
      */
-    public function setGenre(\AppBundle\Entity\Genre $genre) : self
+    public function setGenre(\AppBundle\Entity\Genre $genre)
     {
         $this->genre = $genre;
 
@@ -306,7 +306,7 @@ class Films
      *
      * @return Films
      */
-    public function setSlug(string $slug) : self
+    public function setSlug(string $slug)
     {
         $this->slug = $slug;
 
