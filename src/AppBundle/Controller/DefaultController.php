@@ -158,7 +158,7 @@ class DefaultController extends AbstractController
          */
     	$film = new Films();
     	$form = $this->createForm(FilmsType::Class, $film);
-                  $form->handleRequest($request);
+        $form->handleRequest($request);
     	if ($form->isSubmitted() && $form->isValid()) {
     		$film = $form->getData();
     		$em->persist($film);
@@ -202,7 +202,7 @@ class DefaultController extends AbstractController
              * @var \Symfony\Component\Form\Form $form
              */
     		$form = $this->createForm(FilmsType::Class, $film);
-                                    $form->handleRequest($request);
+                $form->handleRequest($request);
     		if ($form->isSubmitted() && $form->isValid()) {
     			$em->flush();
     			return new JsonResponse(null, 204);
