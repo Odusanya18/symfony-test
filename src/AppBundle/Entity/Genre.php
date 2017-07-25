@@ -53,7 +53,7 @@ class Genre
      *
      * @return Genre
      */
-    public function setName(string $name) : self
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -84,7 +84,7 @@ class Genre
      *
      * @return Genre
      */
-    public function addFilm(\AppBundle\Entity\Films $film) : self
+    public function addFilm(\AppBundle\Entity\Films $film)
     {
         $this->films[] = $film;
 
@@ -106,7 +106,7 @@ class Genre
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getFilms() : \Doctrine\Common\Collections\Collection
+    public function getFilms()
     {
         return $this->films;
     }
