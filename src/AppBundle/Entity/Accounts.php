@@ -173,7 +173,7 @@ class Accounts implements UserInterface
      *
      * @return Accounts
      */
-    public function setLastname($lastname) : self
+    public function setLastname($lastname)
     {
         $this->lastname = $lastname;
 
@@ -197,7 +197,7 @@ class Accounts implements UserInterface
      *
      * @return Accounts
      */
-    public function setEmail($email) : self
+    public function setEmail($email)
     {
         $this->email = $email;
 
