@@ -53,7 +53,7 @@ class Country
      *
      * @return Country
      */
-    public function setName(string $name) : self
+    public function setName(string $name)
     {
         $this->name = $name;
 
@@ -84,7 +84,7 @@ class Country
      *
      * @return Country
      */
-    public function addFilm(\AppBundle\Entity\Films $film) : self
+    public function addFilm(\AppBundle\Entity\Films $film)
     {
         $this->films[] = $film;
 
