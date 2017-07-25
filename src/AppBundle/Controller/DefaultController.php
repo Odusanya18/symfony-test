@@ -202,14 +202,8 @@ class DefaultController extends AbstractController
              * @var \Symfony\Component\Form\Form $form
              */
     		$form = $this->createForm(FilmsType::Class, $film);
+                                    $form->handleRequest($request);
     		if ($form->isSubmitted() && $form->isValid()) {
-    			$data = $form->getData();
-    			$film->setName($data->getName())
-    				->setDescription($data->getDescription())
-    				->setReleaseDate($data->getReleaseDate())
-    				->setCountry($data->getCountry())
-    				->setGenre($data->getGenre())
-    				->setImageFile($date->getImageFile());
     			$em->flush();
     			return new JsonResponse(null, 204);
     		}
