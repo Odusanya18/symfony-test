@@ -33,7 +33,7 @@ class DefaultController extends AbstractController
      * @param EntityManagerInterface $em
      * @return null | \Symfony\Component\HttpFoundation\Response
      */
-    public function listAction(\AppBundle\Pagination\PaginationFactory $paginator, Request $request,
+    public function listFilmAction(\AppBundle\Pagination\PaginationFactory $paginator, Request $request,
      EntityManagerInterFace $em)
     {
         /**
@@ -94,7 +94,7 @@ class DefaultController extends AbstractController
      * @param EntityManagerInterface $em
      * @return null | \Symfony\Component\HttpFoundation\Response
      */
-    public function displayAction(Request $request, Films $film, EntityManagerInterFace $em)
+    public function displayFilmAction(Request $request, Films $film, EntityManagerInterFace $em)
     {
         /**
          * @var \AppBundle\Entity\Country | [] $countries
@@ -129,7 +129,7 @@ class DefaultController extends AbstractController
      * This endpoint returns rather oddly HTML, in order to
      * accelerate dev time of the test project
      */
-    public function apiListAction(\AppBundle\Pagination\PaginationFactory $paginator, Request $request,
+    public function apiListFilmAction(\AppBundle\Pagination\PaginationFactory $paginator, Request $request,
      EntityManagerInterFace $em)
     {
         /**
@@ -181,7 +181,7 @@ class DefaultController extends AbstractController
      * @param Films $film
      * @return JsonResponse
      */
-    public function apiManageAction(Request $request, EntityManagerInterFace $em, Films $film)
+    public function apiManageFilmAction(Request $request, EntityManagerInterFace $em, Films $film)
     {
     	if ($request->getMethod() === 'GET') {
             /**
