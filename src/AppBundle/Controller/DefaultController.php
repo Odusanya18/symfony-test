@@ -150,7 +150,7 @@ class DefaultController extends AbstractController
      * @param EntityManagerInterface $em
      * @return JsonResponse
      */
-    public function apiNewFilmAction(EntityManagerInterFace $em)
+    public function apiNewFilmAction(EntityManagerInterFace $em, Request $request)
     {
         /**
          * @var Films $film
