@@ -43,7 +43,7 @@ class LoadAllData implements FixtureInterface
     		$genre[$i]->setName('genre '.($i+1));
     		$manager->persist($genre[$i]);
     	}
-    	for ($i=0; $i < 100 ; $i++) { 
+    	for ($i=0; $i < 20 ; $i++) { 
     		$film[$i] = new Films();
     		$film[$i]->setImage('film-'.rand(1,5).'.jpg')
     			->setName('Moana '.($i+1))
@@ -56,9 +56,9 @@ class LoadAllData implements FixtureInterface
     			->setGenre($genre[rand(0,4)]);
     		$manager->persist($film[$i]);
 
-            //Set 10 comments per movie
+            //Set 3 comments per movie
 
-            for ($j=0; $j < 9 ; $j++) { 
+            for ($j=0; $j < 3 ; $j++) { 
                 $user = $account[rand(0,9)]; 
                 $comment[$i][$j] = new Comments();
                 $comment[$i][$j]->setName($user->getFirstName().' '.$user->getLastName())
