@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 35.187.44.51
+    database_host: 104.199.76.4
     database_port: null
     database_name: symfony
     database_user: root

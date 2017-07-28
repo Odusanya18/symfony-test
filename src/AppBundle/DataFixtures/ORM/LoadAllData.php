@@ -43,7 +43,7 @@ class LoadAllData implements FixtureInterface
     		$genre[$i]->setName('genre '.($i+1));
     		$manager->persist($genre[$i]);
     	}
-    	for ($i=0; $i < 20000 ; $i++) { 
+    	for ($i=0; $i < 200 ; $i++) { 
     		$film[$i] = new Films();
     		$film[$i]->setImage('film-'.rand(1,5).'.jpg')
     			->setName('Moana '.($i+1))
