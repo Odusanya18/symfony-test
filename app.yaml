@@ -1,5 +1,16 @@
 runtime: php
 env: flex
 
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1000
+  cool_down_period_sec: 120 # default value
+  cpu_utilization:
+    target_utilization: 0.5
+resources:
+  cpu: .5
+  memory_gb: 0.18
+  disk_size_gb: 10
+
 runtime_config:
   document_root: web
