@@ -9,7 +9,7 @@ automatic_scaling:
     target_utilization: 0.5
 resources:
   cpu: .5
-  memory_gb: 0.18
+  memory_gb: 0.5
   disk_size_gb: 10
 
 runtime_config:
