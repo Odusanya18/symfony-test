@@ -3,6 +3,7 @@
 	Register
 {% endblock %}
 {% block breadcrumb %}
+    {{parent()}}
     <li><a href="{{path('security_register')}}" class="active">Register</a></li>
 {% endblock %}
 {% block body %}
