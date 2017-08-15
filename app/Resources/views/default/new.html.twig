@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block breadcrumb %}
+	{{parent()}}
     <li><a href="{{path('films_new')}}" class="active">New Film</a></li>
 {% endblock %}
 {% block title %}
