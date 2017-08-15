@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block breadcrumb %}
+	{{parent()}}
     <li><a href="{{path('security_login')}}" class="active">Login</a></li>
 {% endblock %}
 {% block title %}
