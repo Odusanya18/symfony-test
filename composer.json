@@ -2,6 +2,7 @@
     "name": "odusanya/codeline",
     "license": "proprietary",
     "type": "project",
+    "description": "This is a test project to demonstrate understanding of basic concepts",
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle"
