@@ -26,7 +26,7 @@ stof_doctrine_extensions:
 framework:
     #esi: ~
     #translator: { fallbacks: ['%locale%'] }
-    secret: '%secret%'
+    secret: 'my%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
         strict_requirements: ~
@@ -39,6 +39,7 @@ framework:
     default_locale: '%locale%'
     trusted_hosts: ~
     session:
+        name: '%secret%'
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id: session.handler.native_file
         save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
