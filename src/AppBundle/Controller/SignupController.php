@@ -19,10 +19,12 @@ class SignupController extends AbstractController
      * @param EntityManagerInterface $em
      * @return null | \Symfony\Component\HttpFoundation\Response
      */
-   public function registerAction(Request $request, GuardAuthenticatorHandler $guard, 
+    public function registerAction(
+       Request $request,
+       GuardAuthenticatorHandler $guard,
     \AppBundle\Security\LoginFormAuthenticator $authenticator,
-     EntityManagerInterFace $em)
-   {
+     EntityManagerInterFace $em
+   ) {
         /**
          * @var \AppBundle\Entity\Country | [] $countries
          * @var \AppBundle\Entity\Genre | [] $genres
@@ -30,7 +32,7 @@ class SignupController extends AbstractController
          */
         $countries = $em->getRepository('AppBundle:Country')->findAll();
         $genres = $em->getRepository('AppBundle:Genre')->findAll();
-        $form = $this->createForm(UserRegistrationForm::Class);
+        $form = $this->createForm(UserRegistrationForm::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             /**

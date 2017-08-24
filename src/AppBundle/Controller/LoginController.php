@@ -12,15 +12,16 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class LoginController extends AbstractController
 {
-  /**
-     * @Route("/login", name="security_login")
-     * @param EntityManagerInterface $em
-     * @param AuthenticationUtils $authenticationUtils
-     * @return null | \Symfony\Component\HttpFoundation\Response
-     */
-    public function loginAction(AuthenticationUtils $authenticationUtils,
-     EntityManagerInterFace $em)
-    {
+    /**
+       * @Route("/login", name="security_login")
+       * @param EntityManagerInterface $em
+       * @param AuthenticationUtils $authenticationUtils
+       * @return null | \Symfony\Component\HttpFoundation\Response
+       */
+    public function loginAction(
+        AuthenticationUtils $authenticationUtils,
+     EntityManagerInterFace $em
+    ) {
         /**
          * @var \AppBundle\Entity\Country | [] $countries
          * @var \AppBundle\Entity\Genre | [] $genres
@@ -32,7 +33,7 @@ class LoginController extends AbstractController
         $genres = $em->getRepository('AppBundle:Genre')->findAll();
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
-        $form = $this->createForm(LoginForm::Class, [
+        $form = $this->createForm(LoginForm::class, [
             '_username' => $lastUsername,
         ]);
 

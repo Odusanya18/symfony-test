@@ -33,6 +33,4 @@ class CountryType extends AbstractType
     {
         return 'appbundle_country';
     }
-
-
 }

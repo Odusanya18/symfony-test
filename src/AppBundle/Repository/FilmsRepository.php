@@ -10,40 +10,46 @@ namespace AppBundle\Repository;
  */
 class FilmsRepository extends \Doctrine\ORM\EntityRepository
 {
-	/**
-	 * @return \Doctrine\DBAL\Query\QueryBuilder
-	 */
-	public function getFilmLists()
-	{
-		return $this->createQueryBuilder('p')
-			->select('partial p.{id}', 'p.image', 'p.name', 'p.slug', 'p.ticketPrice',
-				'p.rating');
-	}
+    /**
+     * @return \Doctrine\DBAL\Query\QueryBuilder
+     */
+    public function getFilmLists()
+    {
+        return $this->createQueryBuilder('p')
+            ->select(
+                'partial p.{id}',
+                'p.image',
+                'p.name',
+                'p.slug',
+                'p.ticketPrice',
+                'p.rating'
+            );
+    }
 
-	/**
-	 * @param string $slug
-	 * @return array
-	 */
-	public function getFilmPage(string $slug)
-	{
-		return $this->createQueryBuilder('c')
-			->select('c.id', 'c.image', 'c.name', 'c.slug', 'c.ticketPrice')
-			->where('c.slug = :slug')
-			->setParameter('slug', $slug)
-			->getQuery()
-			->getResult();
-	}
+    /**
+     * @param string $slug
+     * @return array
+     */
+    public function getFilmPage(string $slug)
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c.id', 'c.image', 'c.name', 'c.slug', 'c.ticketPrice')
+            ->where('c.slug = :slug')
+            ->setParameter('slug', $slug)
+            ->getQuery()
+            ->getResult();
+    }
 
-	/**
-	 * @return array
-	 */
-	public function getAverageRating(\AppBundle\Entity\Films $film)
-	{
-		return $this->createQueryBuilder('f')
-			->select('AVG(f.rating) AS average')
-			->where('f.id = :id')
-			->setParameter('id', $film->getId())
-			->getQuery()
-			->getResult();
-	}
+    /**
+     * @return array
+     */
+    public function getAverageRating(\AppBundle\Entity\Films $film)
+    {
+        return $this->createQueryBuilder('f')
+            ->select('AVG(f.rating) AS average')
+            ->where('f.id = :id')
+            ->setParameter('id', $film->getId())
+            ->getQuery()
+            ->getResult();
+    }
 }

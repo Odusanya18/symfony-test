@@ -35,6 +35,4 @@ class FilmsType extends AbstractType
     {
         return 'appbundle_films';
     }
-
-
 }

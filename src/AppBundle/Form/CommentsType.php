@@ -33,6 +33,4 @@ class CommentsType extends AbstractType
     {
         return 'appbundle_comments';
     }
-
-
 }

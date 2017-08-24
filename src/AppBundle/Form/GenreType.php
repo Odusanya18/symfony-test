@@ -33,6 +33,4 @@ class GenreType extends AbstractType
     {
         return 'appbundle_genre';
     }
-
-
 }

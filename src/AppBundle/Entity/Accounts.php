@@ -7,7 +7,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * Accounts
  *
@@ -275,6 +274,4 @@ class Accounts implements UserInterface
     {
         return $this->plainPassword;
     }
-
 }
-
