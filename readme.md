@@ -1,3 +1,5 @@
+![SensioLabsInsight](https://insight.sensiolabs.com/projects/ae4f8e9e-702e-4781-8b1b-5b6b18c84f9f/big.png)
+
 <b>Test Project 2:</b><br><br>
 	<p><i>The test project is aimed at testing knowledge of best practices, anti-patterns and basic understanding
 	of symfony and the likes... It strongly embraces concepts such as modularity, service registration, abstraction,
