@@ -12,8 +12,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Doctrine\ORM\EntityManagerInterface;
 use AppBundle\Entity\Films;
 use AppBundle\Entity\Comments;
-use AppBundle\Form\CommentsType;
-use AppBundle\Form\FilmsType;
+use AppBundle\Form\Type\CommentsType;
+use AppBundle\Form\Type\FilmsType;
 
 class DefaultController extends AbstractController
 {

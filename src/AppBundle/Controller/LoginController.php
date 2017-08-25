@@ -4,8 +4,8 @@ namespace AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use AppBundle\Form\LoginForm;
-use AppBundle\Form\PasswordResetForm;
+use AppBundle\Form\Type\LoginForm;
+use AppBundle\Form\Type\PasswordResetForm;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Doctrine\ORM\EntityManagerInterface;
