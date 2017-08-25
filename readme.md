@@ -1,4 +1,4 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/ae4f8e9e-702e-4781-8b1b-5b6b18c84f9f/big.png)]
+![SensioLabsInsight](https://insight.sensiolabs.com/projects/ae4f8e9e-702e-4781-8b1b-5b6b18c84f9f/big.png)
 
 <b>Test Project 2:</b><br><br>
 	<p><i>The test project is aimed at testing knowledge of best practices, anti-patterns and basic understanding
