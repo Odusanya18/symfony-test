@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: tommy.heliohost.org
+    database_port: 3306
+    database_name: odusanya_appspot
+    database_user: odusanya_appspot
+    database_password: appspot
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: ThisTokenIsNotSoSecretChangeIt
